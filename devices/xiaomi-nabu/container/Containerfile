@@ -11,7 +11,7 @@ RUN mkdir -p /boot/dtb && \
         kernel-modules \
         kernel-modules-core && \
     dnf -y copr enable codecharaof/xiaomi-nabu-backport && \
-    dnf -y install --from-repo='copr:copr.fedorainfracloud.org:codecharaof:xiaomi-nabu-backport' 'kernel-6.16.0-0.sm8150' && \
+    dnf -y install --from-repo='copr:copr.fedorainfracloud.org:codecharaof:xiaomi-nabu-backport' 'kernel' && \
     rm -r /boot/dtb
 
 RUN dnf -y install \

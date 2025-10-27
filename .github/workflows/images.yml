@@ -9,9 +9,6 @@ on:
         required: true
         options:
           - xiaomi-nabu
-          - xiaomi-pipa
-          - oneplus-sdm845
-          - nothing-spacewar
       fedora_branch:
         type: choice
         description: fedora branch
@@ -27,7 +24,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        desktop: [gnome-desktop, gnome-mobile, plasma-desktop, plasma-mobile, phosh]
+        desktop: [gnome-desktop]
     name: ${{ inputs.device }}-${{ matrix.desktop }}:${{ inputs.fedora_branch }}
     steps:
       - uses: actions/checkout@v4

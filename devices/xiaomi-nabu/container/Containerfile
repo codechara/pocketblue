@@ -10,7 +10,8 @@ RUN mkdir -p /boot/dtb && \
         kernel-core \
         kernel-modules \
         kernel-modules-core && \
-    dnf -y install kernel && \
+    dnf -y copr enable codechara/xiaomi-nabu-backport && \
+    dnf -y install kernel
     rm -r /boot/dtb
 
 RUN dnf -y install \

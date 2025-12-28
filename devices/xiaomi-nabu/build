@@ -34,5 +34,6 @@ dnf -y remove \
     kernel-modules \
     kernel-modules-core
 rm -rf /usr/lib/modules/*
+dnf -y copr enable codecharaof/sm8150
 dnf -y install kernel
 rm -r /boot/dtb

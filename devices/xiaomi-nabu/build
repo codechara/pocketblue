@@ -35,5 +35,5 @@ dnf -y remove \
     kernel-modules-core
 rm -rf /usr/lib/modules/*
 dnf -y copr enable codecharaof/sm8150
-dnf -y install kernel
+dnf -y install --from-repo='copr:copr.fedorainfracloud.org:codecharaof:sm8150' kernel
 rm -r /boot/dtb

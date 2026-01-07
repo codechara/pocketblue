@@ -47,7 +47,7 @@ jobs:
       - uses: pocketblue/actions/images@main
         with:
           device: ${{ matrix.device }}
-          registry: ${{ vars.REGISTRY }}
+          registry: ghcr.io/codechara
           image_name: ${{ matrix.device }}-${{ matrix.desktop }}
           image_tag: ${{ inputs.fedora_branch }}
           args_7z: -mmt=1 -md=1500m

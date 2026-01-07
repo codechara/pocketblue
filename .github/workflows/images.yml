@@ -35,7 +35,7 @@ jobs:
       - uses: pocketblue/actions/images@main
         with:
           device: ${{ inputs.device }}
-          registry: ${{ vars.REGISTRY }}
+          registry: ghcr.io/codechara
           image_name: ${{ inputs.device }}-${{ matrix.desktop }}
           image_tag: ${{ inputs.fedora_branch }}
       - uses: actions/upload-artifact@v4

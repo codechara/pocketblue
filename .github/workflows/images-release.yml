@@ -32,19 +32,15 @@ jobs:
         with:
           tag_name: ${{ steps.version.outputs.version }}
           draft: true
-          body: |
-            recommended image for xiaomi pad 5: [gnome-desktop](https://github.com/pocketblue/pocketblue/releases/download/${{ steps.version.outputs.version }}/pocketblue-xiaomi-nabu-gnome-desktop-${{ inputs.fedora_branch }}.7z)
-            recommended image for xiaomi pad 6: [gnome-desktop](https://github.com/pocketblue/pocketblue/releases/download/${{ steps.version.outputs.version }}/pocketblue-xiaomi-pipa-gnome-desktop-${{ inputs.fedora_branch }}.7z)
-            recommended image for oneplus 6 and oneplus 6t: [gnome-mobile](https://github.com/pocketblue/pocketblue/releases/download/${{ steps.version.outputs.version }}/pocketblue-oneplus-sdm845-gnome-mobile-${{ inputs.fedora_branch }}.7z)
-
+          body: ><
   images_build:
     needs: create_release
     runs-on: ubuntu-24.04-arm
     strategy:
       fail-fast: false
       matrix:
-        device: [oneplus-sdm845, xiaomi-nabu, xiaomi-pipa]
-        desktop: [gnome-desktop, gnome-mobile, plasma-desktop, plasma-mobile, phosh]
+        device: [xiaomi-nabu]
+        desktop: [gnome-desktop]
     name: ${{ matrix.device }}-${{ matrix.desktop }}:${{ inputs.fedora_branch }}
     steps:
       - uses: actions/checkout@v4
